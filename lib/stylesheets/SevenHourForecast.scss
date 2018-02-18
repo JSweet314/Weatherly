@@ -1,7 +1,9 @@
 .seven-hour {
   background-color: magenta;
-  text-align: center;
-
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
 }
 
 .seven-hour__menu-btn {
@@ -13,10 +15,15 @@
   background-size: 3.5rem;
   background-color: magenta;
   margin-top: 2rem;
+  border: none;
 }
 
 .seven-hour__title {
   writing-mode: vertical-rl;
   height: 10rem;
   text-align: center;
+}
+
+.seven-hour .card {
+  display: none;
 }
