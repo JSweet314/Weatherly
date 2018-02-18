@@ -1,0 +1,22 @@
+.seven-hour {
+  background-color: magenta;
+  text-align: center;
+
+}
+
+.seven-hour__menu-btn {
+  height: 4rem;
+  width: 4rem;
+  background-image: url('../images/time-left.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 3.5rem;
+  background-color: magenta;
+  margin-top: 2rem;
+}
+
+.seven-hour__title {
+  writing-mode: vertical-rl;
+  height: 10rem;
+  text-align: center;
+}
