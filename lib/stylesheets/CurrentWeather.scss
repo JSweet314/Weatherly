@@ -1,19 +1,24 @@
 .current-weather {
+  // background-image: url('../images/partly-cloudy-shore.jpg');
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('../images/partly-cloudy-shore.jpg');
-  opacity: 0.5;
-}
-
-.current-weather__wrapper {
-  opacity: 1;
-  z-index: 10;
-}
-
-h1 {
+  // text-shadow: 2px 2px 2px black;
   text-align: center;
-  font-size: 75px;
-  font-family: papyrus;
+  font-weight: bold;
+  color: black;
+}
+
+.current-weather__data {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.current-weather__temp {
+  text-align: center;
+  font-size: 3rem;
+  font-family: arial;
 }
