@@ -2,4 +2,8 @@ $card-background-color: orange;
 
 .card {
   background-color: $card-background-color;
+  width: 10rem;
+  height: 15rem;
+  justify-content: center;
+  margin: 1rem;
 }
