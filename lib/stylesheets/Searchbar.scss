@@ -1,0 +1,35 @@
+.search-bar {
+  position: absolute;
+  display: flex;
+  height: 4rem;
+  left: 0;
+  top: 0;
+  width: 90%;
+}
+
+.search-bar__btn {
+  transform: rotate(90deg);
+  background-image: url("../images/toggle-menu-icon-black.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  min-height: 4rem;
+  min-width: 4rem;
+}
+
+.search-bar__btn:hover {
+  background-color: #48A3F3;
+  background-image: url("../images/toggle-menu-icon-white.svg");
+}
+
+.search-bar__search {
+  background: url("../images/search-icon.svg") 1rem no-repeat;
+  background-size: 1.5rem 1.5rem;
+  font-size: 1.5rem;
+  padding: 0 0 0 3.5rem;
+  width: 100%;
+}
+
+.search-bar__search::placeholder {
+  color: lightgrey;
+}
