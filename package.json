@@ -59,6 +59,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "@jsweet314/Prefix-Trie": "git+https://github.com/JSweet314/prefix-trie.git",
     "moment": "^2.20.1"
   }
 }
