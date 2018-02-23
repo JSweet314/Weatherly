@@ -1,14 +1,11 @@
 .current-weather {
-  // background-image: url('../images/partly-cloudy-shore.jpg');
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // text-shadow: 2px 2px 2px black;
   text-align: center;
   font-weight: bold;
   color: black;
-  height: 80vh;
 }
 
 .current-weather__data {
