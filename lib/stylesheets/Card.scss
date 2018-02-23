@@ -1,13 +1,15 @@
-$card-background-color: #fff;
+$card-background-color: rgba(255, 255, 255, 0.8);
 
 .card {
   background-color: $card-background-color;
   width: 80%;
-  height: 12rem;
+  height: 8.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 1rem;
   box-shadow: 2px 2px 2px gray;
-
+  border-radius: 1rem;
+  text-align: center;
 }
+
