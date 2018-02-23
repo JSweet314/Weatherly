@@ -1,4 +1,4 @@
-$card-background-color: orange;
+$card-background-color: #fff;
 
 .card {
   background-color: $card-background-color;
@@ -8,5 +8,6 @@ $card-background-color: orange;
   justify-content: space-around;
   align-items: center;
   margin: 1rem;
+  box-shadow: 2px 2px 2px gray;
 
 }
