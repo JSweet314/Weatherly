@@ -1,7 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 import Searchbar from '../lib/Searchbar.js';
-import { wrap } from 'module';
 
 describe('Searchbar', () => {
   let wrapper;
@@ -46,7 +45,8 @@ describe('Searchbar', () => {
   });
 
 
-  it('should be able to toggle the display of the input and submit buttons', () => {
+  it('should be able to toggle the display of the input and submit buttons',
+  () => {
     const button = wrapper.find('.search-bar__btn');
 
     expect(wrapper.instance().toggleMenuDisplay).not.toHaveBeenCalled;
@@ -73,7 +73,7 @@ describe('Searchbar', () => {
   });
 
   it('should call handleSubmit when submit button is clicked', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />)
+    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const searchBtn = wrapper.find('.search-bar__submit');
     
     wrapper.instance().updateSearchValue({ target: { value: 'search term' } });
@@ -84,5 +84,5 @@ describe('Searchbar', () => {
 
     expect(wrapper.props().handleSearch).toHaveBeenCalledTimes(1);
     expect(wrapper.state('searchValue')).toEqual('');
-  })
+  });
 });
