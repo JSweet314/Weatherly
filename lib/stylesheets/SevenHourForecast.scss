@@ -1,29 +1,12 @@
 .seven-hour {
-  background-color: magenta;
+  background: rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   flex-direction: column;
   overflow: scroll;
-}
-
-.seven-hour__menu-btn {
-  height: 4rem;
-  width: 4rem;
-  background-image: url('../images/time-left.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 3.5rem;
-  background-color: magenta;
-  margin-top: 2rem;
-  border: none;
+  height: 80vh;
 }
 
 .seven-hour__title {
-  writing-mode: vertical-rl;
-  height: 10rem;
   text-align: center;
-}
-
-.seven-hour .card {
-  // display: none;
 }

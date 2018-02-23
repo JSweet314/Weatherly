@@ -1,14 +1,18 @@
 body,
 html {
-  font-size: 10px;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .app {
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: 60% 40%;
   grid-template-rows: 80% 20%;
+  background-image: url('../images/snow.jpg');
+  height: 100vh;
+  background-size: 100vw 100vh;
 }
 
 .current-weather {

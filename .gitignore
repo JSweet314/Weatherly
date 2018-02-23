@@ -29,3 +29,5 @@ node_modules
 
 # Private Folder
 private
+
+.DS_Store
