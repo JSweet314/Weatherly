@@ -73,6 +73,7 @@ describe('Searchbar', () => {
   });
 
   it('should call handleSubmit when submit button is clicked and clear the input field', () => {
+    localStorage.setItem('weatherlyData', JSON.parse(['Denver, CO']));
     wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const searchBtn = wrapper.find('.search-bar__submit');
     
