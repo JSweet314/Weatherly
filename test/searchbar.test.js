@@ -6,7 +6,7 @@ describe('Searchbar', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Searchbar />);
+    wrapper = shallow(<Searchbar handleSearch={jest.fn()}/>);
   });
   
   it('should render two buttons and an input[type=search]', () => {
@@ -72,7 +72,8 @@ describe('Searchbar', () => {
     expect(wrapper.state('isDisplayed')).toEqual(true);
   });
 
-  it('should call handleSubmit when submit button is clicked', () => {
+  it('should call handleSubmit when submit button is clicked and clear the input field', () => {
+    localStorage.setItem('weatherlyData', JSON.parse(['Denver, CO']));
     wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const searchBtn = wrapper.find('.search-bar__submit');
     
