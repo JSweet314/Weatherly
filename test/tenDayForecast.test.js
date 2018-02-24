@@ -22,10 +22,6 @@ describe('TenDayForecast', () => {
     wrapper = shallow(<TenDayForecast tenDayForecast={mockData} />);
   })
 
-  it('should have a prop tenDayForecast, an array', () => {
-    expect(Array.isArray(wrapper.props.tenDayForecast)).toEqual(true);
-  })
-  
   it('should render our good friend, TenDayForecast', () => {
     expect(wrapper).not.toBeNull;
     mockData.forEach((day, index) => {
@@ -35,5 +31,8 @@ describe('TenDayForecast', () => {
     });
   });
 
-
+  it('should have a prop tenDayForecast, an array', () => {
+    expect(wrapper.props('tenDayForecast')).toBeDefined;
+    expect(Array.isArray(wrapper.props('tenDatForecast').children)).toEqual(true);
+  });
 });
