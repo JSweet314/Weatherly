@@ -13,12 +13,10 @@ describe('Searchbar', () => {
   });
   
   it('should render our good friend, Searchbar', () => {
-    expect(wrapper.containsAllMatchingElements([
-      <button className='search-bar__button' />,
-      <input type='search' />, 
-      <datalist />, 
-      <button className='search-bar__submit' />
-    ]));
+    expect(wrapper.find('search-bar__btn')).toBeDefined;
+    expect(wrapper.find('input')).toBeDefined;
+    expect(wrapper.find('datalist')).toBeDefined;
+    expect(wrapper.find('search-bar__submit')).toBeDefined;
   });
 
   it('should start with an empty style list', () => {
