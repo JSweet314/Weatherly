@@ -5,6 +5,11 @@
   left: 0;
   top: 0;
   width: 60%;
+
+  &:welcome {
+    justify-self: center;
+    align-self: center;
+  }
 }
 
 .search-bar__btn {
@@ -14,20 +19,20 @@
   background-size: 1.5rem;
   min-height: 4rem;
   min-width: 4rem;
+
+  &:hover {
+    background-color: #48A3F3;
+    background-image: url("../images/toggle-menu-icon-white.svg");
+  }
 }
 
 .search-bar__submit {
   background: rgba(255,255,255,0.5);
-}
 
-.search-bar__submit:hover {
-  background-color: #48A3F3;
-  color: #fff;
-}
-
-.search-bar__btn:hover {
-  background-color: #48A3F3;
-  background-image: url("../images/toggle-menu-icon-white.svg");
+  &:hover {
+    background-color: #48A3F3;
+    color: #fff;
+  }
 }
 
 .search-bar__search {
@@ -36,8 +41,8 @@
   font-size: 1.5rem;
   padding: 0 0 0 3.5rem;
   width: 100%;
-}
 
-.search-bar__search::placeholder {
-  color: lightgrey;
+  &::placeholder {
+    color: lightgrey;
+  }
 }
