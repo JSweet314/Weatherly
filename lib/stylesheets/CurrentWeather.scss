@@ -15,8 +15,8 @@
   color: black;
   text-shadow: 2px 2px 2px gray;
   width: 85%;
-  height: 100%;
-  margin-top: 10rem;
+  height: 75%;
+  margin-top: 5rem;
   border-radius: 2rem 2rem;
 }
 
@@ -25,16 +25,21 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  // background-color: rgba(255, 255, 255, 0.7);
+  height: 6rem;
 }
 
 .current-weather__temp {
   text-align: center;
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: arial;
-  // background-color: rgba(255, 255, 255, 0.5)
+  height: 5rem;
 }
 
 .current-weather__description {
   width: 75%;
+}
+
+.current-weather__img {
+  width: 5rem;
+  margin: 1rem;
 }
