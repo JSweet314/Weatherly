@@ -19,14 +19,6 @@ describe('Searchbar', () => {
     expect(wrapper.find('search-bar__submit')).toBeDefined;
   });
 
-  it('should start with an empty style list', () => {
-    expect(wrapper.state('displayStyle')).toEqual({});
-  });
-
-  it('should be displayed by default', () => {
-    expect(wrapper.state('isDisplayed')).toEqual(true);
-  });
-
   it('should store a search value', () => {
     expect(wrapper.state('searchValue')).toEqual('');
   });
@@ -48,33 +40,6 @@ describe('Searchbar', () => {
     expect(wrapper.instance().updateSearchValue).toHaveBeenCalledTimes(1);
   });
   
-  it('should be able to toggle the display of the input field and submit button',
-  () => {
-    const button = wrapper.find('.search-bar__btn');
-
-    expect(wrapper.instance().toggleMenuDisplay).not.toHaveBeenCalled;
-
-    wrapper.instance().toggleMenuDisplay = jest.fn();
-    button.simulate('click');
-
-    expect(wrapper.instance().toggleMenuDisplay).toHaveBeenCalledTimes(1);
-  });
-
-  it('should update the displayStyle in state', () => {
-    expect(wrapper.state('displayStyle')).toEqual({});
-    expect(wrapper.state('isDisplayed')).toEqual(true);
-
-    wrapper.instance().toggleMenuDisplay();
-
-    expect(wrapper.state('displayStyle')).toEqual({display: 'none'});
-    expect(wrapper.state('isDisplayed')).toEqual(false);
-
-    wrapper.instance().toggleMenuDisplay();
-
-    expect(wrapper.state('displayStyle')).toEqual({ display: 'block' });
-    expect(wrapper.state('isDisplayed')).toEqual(true);
-  });
-
   it('should call handleSearch and clear the input field when submit button is clicked', () => {
     wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const searchBtn = wrapper.find('.search-bar__submit');
