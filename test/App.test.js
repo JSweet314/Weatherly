@@ -24,10 +24,11 @@ describe('App - shallow rendering', () => {
       welcome: false
     });
 
-    expect(wrapper.find('Welcome').length).toEqual(0);
-    expect(wrapper.find('Searchbar').length).toEqual(1);
-    expect(wrapper.find('CurrentWeather').length).toEqual(1);
-    expect(wrapper.find('TenDayForecast').length).toEqual(1);
+    expect(wrapper.find(Welcome).length).toEqual(0);
+    expect(wrapper.find(Searchbar).length).toEqual(1);
+    expect(wrapper.find(CurrentWeather).length).toEqual(1);
+    expect(wrapper.find(SevenHourForecast).length).toEqual(1);
+    expect(wrapper.find(TenDayForecast).length).toEqual(1);
   });
 
   it('should be able to store city, state, currentObservation, hourlyForecast, tenDayForecast, and booleans for welcome and error in state', () => {
@@ -54,6 +55,6 @@ describe('App - mounted rendering', () => {
     let search = wrapper.find('Searchbar');
     
     expect(wrapper.state('location')).toEqual('Denver, CO');
-    expect(search.props()).toHaveProperty('lastSearch', 'Denver, CO')
+    expect(search.props()).toHaveProperty('lastSearch', 'Denver, CO');
   });
-})
+});
