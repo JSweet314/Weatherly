@@ -6,11 +6,13 @@ import Searchbar from '../lib/Searchbar';
 import CurrentWeather from '../lib/CurrentWeather';
 import SevenHourForecast from '../lib/SevenHourForecast';
 import TenDayForecast from '../lib/TenDayForecast';
+import {data} from '../public/Data';
 
 describe('App - shallow rendering', () => {
   let wrapper;
 
   beforeEach(() => {
+    fetch.mockResponse(data);
     wrapper = shallow(<App />);
   });
 
@@ -57,4 +59,13 @@ describe('App - mounted rendering', () => {
     expect(wrapper.state('location')).toEqual('Denver, CO');
     expect(search.props()).toHaveProperty('lastSearch', 'Denver, CO');
   });
+
+  it('should have a method handleSearch', () => {
+    expect(wrapper.instance().handleSearch).toBeDefined();
+    
+    wrapper.instance().handleSearch('Denver, CO');
+    expect(wrapper.update).toHaveBeenCalled;
+    wrapper.instance().update('Denver', 'CO');
+    console.log(wrapper.debug())
+  })
 });
