@@ -46,24 +46,17 @@ describe('App - shallow rendering', () => {
 
 describe('App - mounted rendering', () => {
   let wrapper;
-
-  beforeEach(() => {
-    fetch.mockResponse(JSON.stringify(data));
+  
+  it('should be able to retrieve the last search value from localStorage', () => {
     localStorage.setItem('weatherlySearch', 'Denver, CO');
     wrapper = mount(<App />);
-  });
-
-  it('should be able to retrieve the last search value from localStorage', () => {
-    let search = wrapper.find('Searchbar');
-    
     expect(wrapper.state('location')).toEqual('Denver, CO');
-    expect(search.props()).toHaveProperty('lastSearch', 'Denver, CO');
   });
 
   it('should have a method handleSearch', () => {
     expect(wrapper.instance().handleSearch).toBeDefined();
     
     wrapper.instance().handleSearch('Denver, CO');
-    
+    expect(wrapper.state('location')).toEqual('Denver, CO');
   });
 });

@@ -53,7 +53,6 @@ describe('Searchbar - mounted rendering', () => {
   });
 
   it('should call handleSearch and clear the input field when submit button is clicked', () => {
-    console.log(wrapper.debug())
     const searchBtn = wrapper.find('.search-bar__submit');
     
     wrapper.instance().updateSearchValue({ target: { value: 'Denver, CO' } });
