@@ -4,19 +4,18 @@ import Searchbar from '../lib/Searchbar.js';
 import Trie from '@jsweet314//Prefix-Trie/lib/Trie';
 import { cities } from '../public/Data';
 
-describe('Searchbar', () => {
+describe('Searchbar - shallow render', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Searchbar handleSearch={jest.fn()}/>);
     localStorage.clear();
+    wrapper = shallow(<Searchbar handleSearch={jest.fn()}/>);
   });
   
   it('should render our good friend, Searchbar', () => {
-    expect(wrapper.find('search-bar__btn')).toBeDefined;
-    expect(wrapper.find('input')).toBeDefined;
-    expect(wrapper.find('datalist')).toBeDefined;
-    expect(wrapper.find('search-bar__submit')).toBeDefined;
+    expect(wrapper.find('input.search-bar__search').length).toEqual(1);
+    expect(wrapper.find('datalist#autocomplete').length).toEqual(1);
+    expect(wrapper.find('button.search-bar__submit').length).toEqual(1);
   });
 
   it('should store a search value', () => {
@@ -39,9 +38,22 @@ describe('Searchbar', () => {
     
     expect(wrapper.instance().updateSearchValue).toHaveBeenCalledTimes(1);
   });
-  
+
+  it('should store a prefix-trie for autocompletion of searches', () => {
+    expect(wrapper.state('autocomplete')).toBeInstanceOf(Trie);
+  });
+});
+
+describe('Searchbar - mounted rendering', () => {
+  let wrapper;
+
+  beforeEach(()=> {
+    localStorage.clear();
+    wrapper = mount(<Searchbar handleSearch={jest.fn()} />)
+  });
+
   it('should call handleSearch and clear the input field when submit button is clicked', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
+    console.log(wrapper.debug())
     const searchBtn = wrapper.find('.search-bar__submit');
     
     wrapper.instance().updateSearchValue({ target: { value: 'Denver, CO' } });
@@ -55,7 +67,6 @@ describe('Searchbar', () => {
   });
   
   it('should allow the user to press enter to submit a search', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const input = wrapper.find('input');
     
     wrapper.instance().updateSearchValue({ target: { value: 'Denver, CO' } });
@@ -68,25 +79,16 @@ describe('Searchbar', () => {
     expect(wrapper.state('searchValue')).toEqual('');
   });
 
-  it('should store a prefix-trie for autocompletion of searches', () => {
-    expect(wrapper.state('autocomplete')).toBeInstanceOf(Trie);
-  });
-
   it('should populate its autocomplete with a thousand cities', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
-    
     expect(wrapper.state('autocomplete').populate).toHaveBeenCalled;
     expect(wrapper.state('autocomplete').count).toEqual(1000);
   });
 
   it('should store an array of search suggestions', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
-
     expect(wrapper.state('searchSuggestions')).toEqual([]);
   });
 
   it('should update search suggestions as a user types', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const input = wrapper.find('input');
 
     expect(wrapper.state('searchSuggestions')).toEqual([]);
@@ -97,7 +99,6 @@ describe('Searchbar', () => {
   });
 
   it('should call autocompletes select method when a search is submitted', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const submitBtn = wrapper.find('.search-bar__submit');
     
     wrapper.instance().updateSearchValue({ target: { value: 'D' } });
@@ -113,7 +114,6 @@ describe('Searchbar', () => {
   });
 
   it('should store its autocomplete trie in localStorage', () => {
-    wrapper = mount(<Searchbar handleSearch={jest.fn()} />);
     const submitBtn = wrapper.find('.search-bar__submit');
 
     wrapper.instance().updateSearchValue({ target: { value: 'Denver, CO' } });

@@ -7,11 +7,11 @@ describe('Welcome', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Welcome handleSearch={{}} error={false} />);
+    wrapper = shallow(<Welcome handleSearch={jest.fn()} error={false} />);
   });
 
   it('should render our good friend Welcome', () => {
-    wrapper = mount(<Welcome handleSearch={{}} error={{}} />)
+    wrapper = mount(<Welcome handleSearch={jest.fn()} error={false} />)
     expect(wrapper).not.toBeNull;
     expect(wrapper.find('h1.welcomeHeading')).toBeDefined;
     expect(wrapper.find('img')).toBeDefined;
@@ -22,7 +22,7 @@ describe('Welcome', () => {
   });
 
   it('should mount Searchbar', () => {
-    let searchbar = mount(<Searchbar />);
+    let searchbar = mount(<Searchbar handleSearch={jest.fn()} error={false} />);
   });
 
   it('should have an error prop', () => {
@@ -32,7 +32,7 @@ describe('Welcome', () => {
   it('should change the text of the h1 if error is true', () => {
     expect(wrapper.find('h1.welcome__heading').text()).toEqual('Mike and Jon\'s Fantastic Weather App');
   
-    wrapper = shallow(<Welcome handleSearch={{}} error={true} />)
+    wrapper = shallow(<Welcome handleSearch={jest.fn()} error={true} />)
     expect(wrapper.find('h1.welcome__heading').text()).toEqual('Something went wrong...Please search again for a City and State or Zip Code'); 
   });
 });

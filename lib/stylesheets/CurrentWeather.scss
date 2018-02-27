@@ -18,6 +18,11 @@
   height: 75%;
   margin-top: 5rem;
   border-radius: 2rem 2rem;
+  
+}
+
+.current-weather__city {
+  font-size: 3rem;
 }
 
 .current-weather__data {
@@ -27,6 +32,9 @@
   align-items: center;
   height: 6rem;
   width: 100%;
+  p {
+    font-size: 1.5rem;
+  }
 }
 
 .current-weather__temp {
@@ -38,6 +46,7 @@
 
 .current-weather__description {
   width: 75%;
+  font-size: 2rem;
 }
 
 .current-weather__img {

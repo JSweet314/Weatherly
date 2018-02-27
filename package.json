@@ -15,7 +15,8 @@
   },
   "jest": {
     "setupFiles": [
-      "./__mocks__/storageMock.js"
+      "./__mocks__/storageMock.js",
+      "./__mocks__/fetchMock.js"
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
@@ -48,6 +49,7 @@
     "eslint-plugin-react": "^5.1.1",
     "file-loader": "^0.11.2",
     "jest": "^20.0.4",
+    "jest-fetch-mock": "^1.4.2",
     "mocha": "^2.4.5",
     "mocha-loader": "^0.7.1",
     "node-libs-browser": "^1.0.0",
