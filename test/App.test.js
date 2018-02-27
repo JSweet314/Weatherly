@@ -46,7 +46,7 @@ describe('App - shallow rendering', () => {
 
 describe('App - mounted rendering', () => {
   let wrapper;
-  
+
   it('should be able to retrieve the last search value from localStorage', () => {
     localStorage.setItem('weatherlySearch', 'Denver, CO');
     wrapper = mount(<App />);
@@ -54,6 +54,7 @@ describe('App - mounted rendering', () => {
   });
 
   it('should have a method handleSearch', () => {
+    wrapper = mount(<App />);
     expect(wrapper.instance().handleSearch).toBeDefined();
     
     wrapper.instance().handleSearch('Denver, CO');
