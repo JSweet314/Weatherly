@@ -52,12 +52,13 @@ html {
   .search-bar__search {
     height: 3rem;
     width: 100%;
+    border: none;
   }
   
   .current-weather__card {
     margin: 0;
   }
-
+  
   .seven-hour {
     border-bottom: 5px dotted black;
   }
@@ -70,7 +71,7 @@ html {
     width: 100%;
     margin: 30rem 0;
     .card {
-      margin: 2rem 0;
+      margin: 3rem 0 0 0;
       height: 100%;
       display: inline-block;
     }

@@ -12,7 +12,6 @@ describe('App - shallow rendering', () => {
   let wrapper;
 
   beforeEach(() => {
-    fetch.mockResponse(data);
     wrapper = shallow(<App />);
   });
 
@@ -49,6 +48,7 @@ describe('App - mounted rendering', () => {
   let wrapper;
 
   beforeEach(() => {
+    fetch.mockResponse(JSON.stringify(data));
     localStorage.setItem('weatherlySearch', 'Denver, CO');
     wrapper = mount(<App />);
   });
@@ -64,8 +64,6 @@ describe('App - mounted rendering', () => {
     expect(wrapper.instance().handleSearch).toBeDefined();
     
     wrapper.instance().handleSearch('Denver, CO');
-    expect(wrapper.update).toHaveBeenCalled;
-    wrapper.instance().update('Denver', 'CO');
-    console.log(wrapper.debug())
-  })
+    
+  });
 });

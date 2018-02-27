@@ -1,3 +1,1 @@
-const fetch = require('jest-fetch-mock')
-
-global.fetch = fetch;
+global.fetch = require('jest-fetch-mock');
