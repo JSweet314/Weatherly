@@ -1,5 +1,18 @@
-The primary goal of this project was to introduce us to React.js and to get us working with a live API, both of which will be helpful in Mod3 as well as the rest of our careers as developers. Secondary goals were working with React testing, as well as getting us used to building a front facing application again. Though this was a challenging project, it was fun to be able to use React, which is a powerful and interesting tool for building web apps.
+# Weatherly
+By Mike Duke and Jonathan Sweet
+
+Built with React and utilizing the Weather Underground API, this app lets a user search for weather data by location and receive the current, 7-hour, and 10-day forecasts.
+
+## Usage
+* Get an api key from [weather underground](https://www.wunderground.com/weather/api/)
+* Clone down this repo and change in to the directory
+  * `git clone https://github.com/JSweet314/Weatherly.git && cd Weatherly`
+* Create a directory called `private/` with a file `apiKey.js`
+* Within apiKey.js, type `export const apiKey = "YOUR API KEY"`
+* Run `npm install`
+* Run `npm start` and visit localhost:8080 in your preferred browser.
+* To run the test suite - `npm test`
+* To run the linter - `npm run eslint`
 
 ![Finished Welcome Screen](/lib/images/finishedwelcome.png)
 ![Finished Main Page](/lib/images/finishedMain.png)
-
