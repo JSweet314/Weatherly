@@ -14,5 +14,8 @@ Built with React and utilizing the Weather Underground API, this app lets a user
 * To run the test suite - `npm test`
 * To run the linter - `npm run eslint`
 
+Welcome Screen
 ![Finished Welcome Screen](/lib/images/finishedwelcome.png)
+
+Search Results
 ![Finished Main Page](/lib/images/finishedMain.png)
